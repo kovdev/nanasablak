@@ -472,7 +472,12 @@ section {
     inset: 0;
     padding: 50px 0 10px 0;
     margin: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgb(56, 153, 214);
+    background: linear-gradient(
+      54deg,
+      rgba(56, 153, 214, 1) 0%,
+      rgba(0, 38, 71, 0.9) 100%
+    );
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
