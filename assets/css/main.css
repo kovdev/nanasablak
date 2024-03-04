@@ -174,13 +174,14 @@ section {
 
 .scroll-top i {
   font-size: 24px;
-  color: var(--color-secondary);
+  /* color: var(--color-secondary); */
+  color: #fdf0d5;
   line-height: 0;
 }
 
 .scroll-top:hover {
-  background: #ffc732;
-  color: #fff;
+  /* dropshadow */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
 }
 
 .scroll-top.active {
@@ -280,7 +281,12 @@ section {
   }
 
   .navbar-scrolled {
-    background: #051033;
+    background: rgb(15, 37, 106);
+    background: linear-gradient(
+      45deg,
+      rgba(15, 37, 106, 1) 0%,
+      rgba(56, 158, 249, 0.9) 100%
+    );
     width: 100vw;
     box-shadow: 0px 2px 20px rgba(82, 86, 94, 0.1);
   }
@@ -316,7 +322,7 @@ section {
     font-family: var(--font-primary);
     font-size: 14px;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.6);
+    color: #fff;
     text-transform: uppercase;
     white-space: nowrap;
     transition: 0.3s;
@@ -2575,7 +2581,12 @@ section {
 --------------------------------------------------------------*/
 .footer {
   color: #fff;
-  background: #2e5add top center no-repeat;
+  background: rgb(15, 37, 106);
+  background: linear-gradient(
+    45deg,
+    rgba(15, 37, 106, 1) 0%,
+    rgba(56, 158, 249, 0.9) 100%
+  );
   background-size: cover;
   font-size: 14px;
   padding: 80px 0 60px 0;
@@ -2584,7 +2595,7 @@ section {
 
 .footer:before {
   content: '';
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.2);
   position: absolute;
   inset: 0;
 }
