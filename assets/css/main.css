@@ -2718,6 +2718,10 @@ section {
 .products-page .products-description img {
   min-width: 370px;
 }
+.products-list {
+  overflow-x: scroll;
+  max-width: 90vw;
+}
 @media screen and (max-width: 768px) {
   .products-page .container {
     flex-direction: column;
@@ -2774,16 +2778,15 @@ section {
   color: #999;
 }
 
-.products-list {
-  background-color: #8f8f8f;
-}
-
 .product-card {
   background: white;
   padding: 1rem;
   border-radius: 5px;
+  min-width: 200px;
   display: flex;
-  gap: 2rem;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
   margin: 1rem 0;
   color: #8f8f8f;
 }
@@ -2817,7 +2820,6 @@ section {
 .gallery .img {
   text-align: center;
 }
-
 .products-list .product-card img,
 .products-list .related-product-card img {
   width: 250px;
@@ -2903,6 +2905,9 @@ section {
 }
 .navbar ul li ul li a span {
   color: var(--color-secondary) !important;
+}
+.mobile-nav-active .navbar ul li ul li a span {
+  color: rgba(255, 255, 255, 0.7) !important;
 }
 
 @media (max-width: 768px) {
@@ -2997,6 +3002,7 @@ section {
   max-width: 250px;
 }
 .shadowHeader {
+  text-align: center;
   text-shadow: 1px 1px 1px #000000;
 }
 .noChange {
@@ -3122,6 +3128,11 @@ section {
   position: absolute;
   bottom: 5%;
 }
+@media only screen and (max-width: 1600px) {
+  .navbar {
+    padding-top: 70px !important;
+  }
+}
 @media only screen and (max-width: 1280px) {
   .product-page {
     flex-direction: column;
@@ -3166,6 +3177,6 @@ section {
     width: 100% !important;
   }
   .nav-link h5 {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
