@@ -171,10 +171,10 @@ document.addEventListener('DOMContentLoaded', () => {
   new Swiper('.slides-1', {
     speed: 600,
     loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
+    // autoplay: {
+    //   delay: 5000,
+    //   disableOnInteraction: false,
+    // },
     slidesPerView: 'auto',
     pagination: {
       el: '.swiper-pagination',
@@ -240,3 +240,82 @@ document.addEventListener('DOMContentLoaded', () => {
     aos_init();
   });
 });
+const pdfUrl = '/assets/pdf/katalog_HU_2023_internet.pdf';
+const viewPdfBtn = document.getElementById('viewPdfBtn');
+// Function to trigger the download
+function downloadPdf() {
+  fetch(pdfUrl)
+    .then((response) => response.blob())
+    .then((blob) => {
+      // Create a blob URL for the PDF data
+      const url = window.URL.createObjectURL(blob);
+
+      // Create a link element to trigger the download
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = '2023-mas_Katalógus.pdf'; // Set the desired file name
+      document.body.appendChild(a);
+
+      // Trigger a click event on the link element to initiate the download
+      a.click();
+
+      // Clean up by revoking the blob URL and removing the link element
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(a);
+    })
+    .catch((error) => {
+      console.error('Failed to download the PDF file: ', error);
+    });
+}
+
+// Call the downloadPdf() function when needed, e.g., in response to a button click
+let downloadBtn = document.getElementById('idealKatalogusDownloadBtn');
+downloadBtn?.addEventListener('click', downloadPdf);
+viewPdfBtn?.addEventListener('click', () => {
+  window.open(pdfUrl, '_blank');
+});
+
+const imageArray = document.querySelectorAll('.zoomable');
+const fullscreenImage = document.getElementById('fullscreenImage');
+let fullscreenBackdrop = document.getElementById('fullscreenBackdrop');
+let overLayText = document.getElementById('overlayText');
+imageArray.forEach((image) => {
+  image.addEventListener('click', () => {
+    let overlayContent = image.parentElement.lastElementChild.innerHTML;
+    if (overlayContent) {
+      overlayText.innerHTML = image.parentElement.lastElementChild.innerHTML;
+    } else {
+      overlayText.innerHTML = '';
+    }
+    fullscreenImage.src = image.src;
+    fullscreenImage.style.display = 'block';
+    createFullscreenBackdrop();
+  });
+});
+fullscreenBackdrop?.addEventListener('click', () => {
+  closeFullscreen();
+});
+fullscreenImage?.addEventListener('click', () => {
+  closeFullscreen();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeFullscreen();
+  }
+});
+
+function createFullscreenBackdrop() {
+  fullscreenBackdrop.style.display = 'block';
+  if (overlayText.innerHTML !== '') {
+    overlayText.style.display = 'block';
+  }
+}
+
+function closeFullscreen() {
+  fullscreenImage.style.display = 'none';
+  overLayText.style.display = 'none';
+  if (fullscreenBackdrop) {
+    fullscreenBackdrop.style.display = 'none';
+  }
+}
