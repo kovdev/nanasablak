@@ -152,7 +152,7 @@ section {
   display: inline-block;
   padding-right: 10px;
   color: #fff;
-  content: '/';
+  content: '|';
 }
 
 /*--------------------------------------------------------------
@@ -2965,7 +2965,15 @@ section {
 
 .navbar ul li a span {
   color: #fff !important;
+  text-transform: uppercase;
 }
+.navbar .dropdown ul a {
+  text-transform: uppercase;
+}
+.navbar ul li ul li a span {
+  color: var(--color-secondary) !important;
+}
+
 @media (max-width: 768px) {
   .contact iframe {
     max-width: 94vw;
@@ -3032,4 +3040,80 @@ section {
   opacity: 1 !important;
   color: #fff;
   z-index: 2;
+}
+.productListRow {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.productListRow .productListCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.2s ease-in-out;
+  border-radius: 14px;
+  cursor: pointer;
+}
+.productListRow .productListCard:hover {
+  transform: scale(1.01);
+  /* add shadow */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+.productListRow .productListCard img {
+  border-radius: 14px;
+  max-width: 250px;
+}
+.shadowHeader {
+  text-shadow: 1px 1px 1px #000000;
+}
+.noChange {
+  text-decoration: none;
+  color: var(--bs-heading-color);
+}
+.noChange:hover {
+  color: var(--bs-heading-color);
+}
+.nav-link {
+  cursor: pointer;
+}
+.infoSquare {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+.infoSquare .infoSquareInner {
+  background: var(--color-primary);
+  width: 120px;
+  height: 80px;
+  color: white;
+  border-radius: 10px;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.infoSquare .infoSquareOuter {
+  max-width: 120px;
+  text-align: center;
+}
+.heatTransferCoefficientTab {
+  padding: 10px 18px 0 19px;
+  background-color: var(--color-primary);
+  color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 31px 0 0 13px;
+  font-size: 2rem;
+}
+.heatTransferCoefficientTab .lower {
+  font-size: 50%;
+}
+.colorCube {
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
 }
