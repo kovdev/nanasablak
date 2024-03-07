@@ -3005,13 +3005,42 @@ section {
 }
 .productListRow .productListCard:hover {
   transform: scale(1.01);
-  /* add shadow */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 .productListRow .productListCard img {
   border-radius: 14px;
   max-width: 250px;
 }
+.catalogCard {
+  max-width: 400px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  padding: 1rem;
+  overflow: hidden; /* Ensure that the image doesn't overflow */
+}
+
+.catalogCard h3 {
+  padding: 1rem;
+  text-align: center;
+}
+
+.catalogCard img {
+  margin: 30px 20px 0 20px;
+  border-radius: 10px;
+  height: 200px;
+  transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); /* Add shadow */
+}
+
+.catalogCard:hover img {
+  transform: scale(1.1); /* Increase scale for zoom effect */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8); /* Adjust shadow on hover */
+}
+
 .shadowHeader {
   text-align: center;
   text-shadow: 1px 1px 1px #000000;
