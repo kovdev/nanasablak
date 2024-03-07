@@ -3251,7 +3251,6 @@ section {
   }
 }
 .bordo:hover {
-  color: #700000 !important;
-  /* add shadow */
-  text-shadow: 0 0 1px #700000;
+  background: linear-gradient(45deg, #700000, #b30000);
+  color: white !important;
 }
