@@ -2791,6 +2791,7 @@ section {
   min-width: 200px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
   text-align: center;
   margin: 1rem 0;
@@ -2997,6 +2998,7 @@ section {
   transition: 0.2s ease-in-out;
   border-radius: 14px;
   cursor: pointer;
+  padding: 0.2rem;
 }
 .productListRow .productListCard:hover {
   transform: scale(1.01);
