@@ -3250,3 +3250,8 @@ section {
     font-size: 0.9rem;
   }
 }
+.bordo:hover {
+  color: #700000 !important;
+  /* add shadow */
+  text-shadow: 0 0 1px #700000;
+}
