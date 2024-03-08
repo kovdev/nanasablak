@@ -3072,6 +3072,10 @@ section {
 .image {
   width: 50%;
 }
+
+.otherServicesCard img {
+  border-radius: 14px;
+}
 .otherServicesCard img {
   border-radius: 14px;
 }
@@ -3092,6 +3096,12 @@ section {
   }
   .otherServicesCard img {
     width: 100%;
+  }
+  .otherServicesCard image {
+    order: 1;
+  }
+  .otherServicesCard .text {
+    order: 2;
   }
 }
 .noChange {
