@@ -2727,6 +2727,26 @@ section {
 .products-list {
   overflow-x: scroll;
   max-width: 90vw;
+  align-items: start;
+  padding: 0 10px;
+}
+.products-list .product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.2s ease-in-out;
+  border-radius: 14px;
+  cursor: pointer;
+  padding: 0.2rem;
+}
+.products-list .product-card img {
+  border-radius: 14px;
+  max-width: 250px;
+  height: 300px;
+}
+.products-list .product-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 @media screen and (max-width: 768px) {
   .products-page .container {
@@ -2969,7 +2989,7 @@ section {
   background-color: red;
   border-radius: 5px;
 }
-.product-page img {
+Infinity .product-page img {
   border-radius: 5px;
 }
 
@@ -2990,7 +3010,7 @@ section {
 .productListRow {
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: start;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
@@ -3003,6 +3023,12 @@ section {
   cursor: pointer;
   padding: 0.2rem;
 }
+.productListRow .productListCard {
+  max-width: 300px;
+}
+.productListRow .productListCard h3 {
+  text-align: center;
+}
 .productListRow .productListCard:hover {
   transform: scale(1.01);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
@@ -3010,6 +3036,7 @@ section {
 .productListRow .productListCard img {
   border-radius: 14px;
   max-width: 250px;
+  height: 300px;
 }
 .catalogCard {
   max-width: 400px;
@@ -3059,7 +3086,7 @@ section {
 .otherServicesCard .text {
   padding: 1rem;
 }
-.otherServicesCard .shadowHeader {
+.shadowHeader {
   text-align: center;
   text-shadow: 1px 1px 1px #000000;
 }
