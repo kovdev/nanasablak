@@ -2916,15 +2916,6 @@ section {
   color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
-.ablakCentrumReferralContainer {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  width: 50vw;
-  height: 200px;
-  backdrop-filter: blur(10px);
-}
 
 .navbar ul li a span {
   color: #fff !important;
@@ -2955,9 +2946,7 @@ section {
   .section-header {
     padding: 0 1rem;
   }
-  .ablakCentrumReferralContainer {
-    width: 90vw !important;
-  }
+
   .carousel-item .info {
     flex-direction: column;
   }
@@ -3207,6 +3196,7 @@ section {
   transform: translateX(-50%);
   background-color: rgba(255, 255, 255, 0.5); /* Adjust the opacity as needed */
   backdrop-filter: blur(10px); /* Add backdrop filter blur */
+  -webkit-backdrop-filter: blur(10px); /* Add backdrop filter blur */
   padding: 10px; /* Add padding for better readability */
   border-radius: 10px; /* Add border radius */
   z-index: 9999;
@@ -3228,6 +3218,7 @@ section {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Add backdrop filter blur */
   z-index: 9997; /* Behind the fullscreen image */
 }
 #fullscreenBackdrop #overlayText {
