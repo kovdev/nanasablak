@@ -124,7 +124,25 @@
             <li>
               <a href="https://kunlux.hu" target="_blank">Árnyékolástechnika</a>
             </li>
-            <li><a href="about.html">Párkányok</a></li>
+            <li class="dropdown">
+              <a href=""
+                ><span class="deepDropDown">Párkányok</span>
+                <i class="bi bi-chevron-down"></i
+              ></a>
+              <ul>
+                <li>
+                  <a href="/parkanyok/pvcparkany.html">PVC Párkányok</a>
+                </li>
+                <li>
+                  <a href="/parkanyok/aluminiumparkany.html"
+                    >Alumínium Párkányok</a
+                  >
+                </li>
+                <li>
+                  <a href="/parkanyok/koparkany.html">Kőpárkányok</a>
+                </li>
+              </ul>
+            </li>
             <li><a href="/services.html">Szolgáltatásaink</a></li>
             <li>
               <a href="/egyebszolgaltatasaink.html">Egyéb Szolgáltatásaink</a>
@@ -163,6 +181,46 @@
           <h2 class="text-center text-primary fw-normal shadowHeader">
             PVC ABLAKOK - ELEGANT TERMÉKCSALÁD
           </h2>
+          <h3 class="text-center text-primary shadowHeader pt-5">TOKOK</h3>
+          <div class="productListRow">
+            <div class="productListCard image-container">
+              <img
+                src="/assets/img/76mmtok.png"
+                class="img-fluid zoomable"
+                alt="76mmtok"
+              />
+              <h3>76 MM-ES TOK</h3>
+              <div class="overlay-text">
+                A beépítési mélység új szabványának alkalmazása. Semleges,
+                valamennyi Elegant szárnytípushoz illő tokkialakítás
+              </div>
+            </div>
+            <div class="productListCard image-container">
+              <img
+                src="/assets/img/84mmtok.png"
+                class="img-fluid zoomable"
+                alt="84mmtok"
+              />
+              <h3>84 MM-ES TOK</h3>
+              <div class="overlay-text">
+                Hagyományos ablakkialakítás 80 mm feletti beépítési mélység
+              </div>
+            </div>
+            <div class="productListCard image-container">
+              <img
+                src="/assets/img/115mmtok.png"
+                class="img-fluid zoomable"
+                alt="elegantthermofibrainfinityablak"
+              />
+              <h3>115 MM-ES TOK</h3>
+              <div class="overlay-text">
+                Elegánsabb kivitel. A hagyományos holland faablakok utánzata.
+                Összekapcsolható a fahatású kivitellel. Az egész család
+                rendelkezésre áll 5 és 15°-os tokmegoldással
+              </div>
+            </div>
+          </div>
+          <h3 class="text-center text-primary shadowHeader pt-5">SZÁRNYAK</h3>
           <div class="productListRow">
             <a href="/ablakok/elegantthermofibrainfinity.html" class="noChange">
               <div class="productListCard">
@@ -274,7 +332,15 @@
     ></a>
 
     <div id="preloader"></div>
-
+    <div id="fullscreenBackdrop"></div>
+    <img
+      id="fullscreenImage"
+      class="fullscreen-image"
+      src=""
+      alt="Fullscreen Image"
+      style="display: none"
+    />
+    <div id="overlayText"></div>
     <!-- Vendor JS Files -->
     <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/vendor/aos/aos.js"></script>
