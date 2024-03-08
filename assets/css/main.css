@@ -3201,7 +3201,8 @@ section {
 #overlayText {
   display: none;
   position: fixed;
-  top: 2%; /* Adjust this value as needed */
+  width: 100%;
+  top: 0; /* Adjust this value as needed */
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(255, 255, 255, 0.5); /* Adjust the opacity as needed */
@@ -3211,6 +3212,11 @@ section {
   z-index: 9999;
   font-size: 1.5rem;
   text-align: center;
+}
+@media (max-width: 768px) {
+  #overlayText {
+    font-size: 1rem;
+  }
 }
 
 #fullscreenBackdrop {
