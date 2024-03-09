@@ -3193,6 +3193,7 @@ section {
   transform: translate(-50%, -50%);
   height: 80vh;
   width: auto;
+  max-width: 90vw;
   z-index: 9998;
   border-radius: 14px;
   cursor: zoom-out;
