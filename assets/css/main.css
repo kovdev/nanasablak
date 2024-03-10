@@ -3300,3 +3300,36 @@ section {
   font-size: 12px;
   color: white;
 }
+#prevButton,
+#nextButton {
+  position: fixed;
+  opacity: 0;
+  bottom: 50%;
+  z-index: 99999;
+  width: 60px;
+  height: 60px;
+  font-weight: 800;
+  border-radius: 4px;
+  transition: all 0.4s;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+#prevButton {
+  left: 5%;
+}
+#nextButton {
+  right: 5%;
+}
+#prevButton:hover,
+#nextButton:hover {
+  transform: scale(1.1);
+}
+.bi-chevron-right,
+.bi-chevron-left {
+  font-size: 4rem;
+  /* add shadow */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 1);
+  color: #3373b2;
+}

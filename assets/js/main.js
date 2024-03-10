@@ -275,35 +275,58 @@ viewPdfBtn?.addEventListener('click', () => {
   window.open(pdfUrl, '_blank');
 });
 
-const imageArray = document.querySelectorAll('.zoomable');
 const fullscreenImage = document.getElementById('fullscreenImage');
-let fullscreenBackdrop = document.getElementById('fullscreenBackdrop');
-let overLayText = document.getElementById('overlayText');
-imageArray.forEach((image) => {
-  image.addEventListener('click', () => {
-    let overlayContent = image.parentElement.lastElementChild.innerHTML;
-    if (overlayContent) {
-      overlayText.innerHTML = image.parentElement.lastElementChild.innerHTML;
-    } else {
-      overlayText.innerHTML = '';
-    }
-    fullscreenImage.src = image.src;
+let currentContainer = null;
+const fullscreenBackdrop = document.getElementById('fullscreenBackdrop');
+const overlayText = document.getElementById('overlayText');
+const prevBtn = document.getElementById('prevButton');
+const nextBtn = document.getElementById('nextButton');
+let currentIndex = 0;
+
+function showFullscreenImage(containerSelector, index) {
+  const imageContainer = document.querySelector(containerSelector);
+  const imageArray = Array.from(imageContainer.querySelectorAll('.zoomable'));
+  // Check if the index is within bounds
+  if (index >= 0 && index < imageArray.length) {
+    [prevBtn, nextBtn].forEach((btn) => {
+      btn.style.opacity = 1;
+    });
+
+    const overlayContent = imageArray[index].nextElementSibling
+      ? imageArray[index].nextElementSibling.innerHTML
+      : '';
+    overlayText.innerHTML = overlayContent;
+    fullscreenImage.src = imageArray[index].src;
     fullscreenImage.style.display = 'block';
     createFullscreenBackdrop();
-  });
-});
-fullscreenBackdrop?.addEventListener('click', () => {
-  closeFullscreen();
-});
-fullscreenImage?.addEventListener('click', () => {
-  closeFullscreen();
-});
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    closeFullscreen();
+    currentIndex = index;
+  } else {
+    console.error('Invalid index or empty image array');
   }
-});
+}
+
+function closeFullscreen() {
+  fullscreenImage.style.display = 'none';
+  overlayText.style.display = 'none';
+  fullscreenBackdrop.style.display = 'none';
+  [prevBtn, nextBtn].forEach((btn) => {
+    btn.style.opacity = 0;
+  });
+}
+
+function navigate(direction, containerSelector) {
+  const imageContainer = document.querySelector(containerSelector);
+  const imageArray = imageContainer.querySelectorAll('.zoomable');
+
+  const newIndex = currentIndex + direction;
+  if (newIndex >= 0 && newIndex < imageArray.length) {
+    showFullscreenImage(containerSelector, newIndex);
+  } else if (newIndex < 0) {
+    showFullscreenImage(containerSelector, imageArray.length - 1);
+  } else {
+    showFullscreenImage(containerSelector, 0);
+  }
+}
 
 function createFullscreenBackdrop() {
   fullscreenBackdrop.style.display = 'block';
@@ -312,13 +335,64 @@ function createFullscreenBackdrop() {
   }
 }
 
-function closeFullscreen() {
-  fullscreenImage.style.display = 'none';
-  overLayText.style.display = 'none';
-  if (fullscreenBackdrop) {
-    fullscreenBackdrop.style.display = 'none';
+document.querySelectorAll('.zoomable').forEach((image, index) => {
+  image.addEventListener('click', () => {
+    currentContainer = image.closest('.colorCubeContainer, .swiper-wrapper');
+    if (currentContainer.classList.contains('colorCubeContainer')) {
+      const containerImages = currentContainer.querySelectorAll('.zoomable');
+      const selectedIndex = Array.from(containerImages).indexOf(image);
+      if (selectedIndex !== -1) {
+        showFullscreenImage('.colorCubeContainer', selectedIndex);
+      } else {
+        console.error('Invalid index or empty image array');
+      }
+    } else {
+      showFullscreenImage('.swiper-wrapper', index);
+    }
+  });
+});
+
+fullscreenBackdrop.addEventListener('click', closeFullscreen);
+fullscreenImage.addEventListener('click', closeFullscreen);
+
+prevBtn.addEventListener('click', () => {
+  const containerSelector = currentContainer.classList.contains(
+    'colorCubeContainer'
+  )
+    ? '.colorCubeContainer'
+    : '.swiper-wrapper';
+  navigate(-1, containerSelector);
+});
+
+nextBtn.addEventListener('click', () => {
+  const containerSelector = currentContainer.classList.contains(
+    'colorCubeContainer'
+  )
+    ? '.colorCubeContainer'
+    : '.swiper-wrapper';
+  navigate(1, containerSelector);
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeFullscreen();
+  } else if (e.key === 'ArrowLeft') {
+    const containerSelector = currentContainer.classList.contains(
+      'colorCubeContainer'
+    )
+      ? '.colorCubeContainer'
+      : '.swiper-wrapper';
+    navigate(-1, containerSelector);
+  } else if (e.key === 'ArrowRight') {
+    const containerSelector = currentContainer.classList.contains(
+      'colorCubeContainer'
+    )
+      ? '.colorCubeContainer'
+      : '.swiper-wrapper';
+    navigate(1, containerSelector);
   }
-}
+});
+
 const container = document.querySelector('.products-list');
 // where "container" is the id of the container
 container?.addEventListener('wheel', function (e) {
