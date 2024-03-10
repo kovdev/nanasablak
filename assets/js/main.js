@@ -355,10 +355,10 @@ document.querySelectorAll('.zoomable').forEach((image, index) => {
   });
 });
 
-fullscreenBackdrop.addEventListener('click', closeFullscreen);
-fullscreenImage.addEventListener('click', closeFullscreen);
+fullscreenBackdrop?.addEventListener('click', closeFullscreen);
+fullscreenImage?.addEventListener('click', closeFullscreen);
 
-prevBtn.addEventListener('click', () => {
+prevBtn?.addEventListener('click', () => {
   const containerSelector = currentContainer.classList.contains(
     'colorCubeContainer'
   )
@@ -367,7 +367,7 @@ prevBtn.addEventListener('click', () => {
   navigate(-1, containerSelector);
 });
 
-nextBtn.addEventListener('click', () => {
+nextBtn?.addEventListener('click', () => {
   const containerSelector = currentContainer.classList.contains(
     'colorCubeContainer'
   )
@@ -396,15 +396,15 @@ document.addEventListener('keydown', (e) => {
   }
 });
 // Touch event listeners for swipe gesture
-fullscreenImage.addEventListener('touchstart', (e) => {
+fullscreenImage?.addEventListener('touchstart', (e) => {
   touchStartX = e.touches[0].clientX;
 });
 
-fullscreenImage.addEventListener('touchmove', (e) => {
+fullscreenImage?.addEventListener('touchmove', (e) => {
   touchEndX = e.touches[0].clientX;
 });
 
-fullscreenImage.addEventListener('touchend', () => {
+fullscreenImage?.addEventListener('touchend', () => {
   if (touchEndX < touchStartX) {
     // Swiped left
     const containerSelector = currentContainer.classList.contains(
