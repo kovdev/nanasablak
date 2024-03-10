@@ -283,6 +283,9 @@ const prevBtn = document.getElementById('prevButton');
 const nextBtn = document.getElementById('nextButton');
 let currentIndex = 0;
 
+let touchStartX = 0;
+let touchEndX = 0;
+
 function showFullscreenImage(containerSelector, index) {
   const imageContainer = document.querySelector(containerSelector);
   const imageArray = Array.from(imageContainer.querySelectorAll('.zoomable'));
@@ -390,6 +393,34 @@ document.addEventListener('keydown', (e) => {
       ? '.colorCubeContainer'
       : '.swiper-wrapper';
     navigate(1, containerSelector);
+  }
+});
+// Touch event listeners for swipe gesture
+fullscreenImage.addEventListener('touchstart', (e) => {
+  touchStartX = e.touches[0].clientX;
+});
+
+fullscreenImage.addEventListener('touchmove', (e) => {
+  touchEndX = e.touches[0].clientX;
+});
+
+fullscreenImage.addEventListener('touchend', () => {
+  if (touchEndX < touchStartX) {
+    // Swiped left
+    const containerSelector = currentContainer.classList.contains(
+      'colorCubeContainer'
+    )
+      ? '.colorCubeContainer'
+      : '.swiper-wrapper';
+    navigate(1, containerSelector);
+  } else if (touchEndX > touchStartX) {
+    // Swiped right
+    const containerSelector = currentContainer.classList.contains(
+      'colorCubeContainer'
+    )
+      ? '.colorCubeContainer'
+      : '.swiper-wrapper';
+    navigate(-1, containerSelector);
   }
 });
 
