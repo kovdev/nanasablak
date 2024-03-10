@@ -3267,6 +3267,10 @@ section {
   .colorCubeContainer {
     justify-content: center;
   }
+  .navbar a,
+  .navbar a:focus {
+    color: #fff !important;
+  }
 }
 @media only screen and (max-width: 768px) {
   .fullscreen-image {
