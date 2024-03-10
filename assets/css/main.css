@@ -3292,3 +3292,7 @@ section {
   background: linear-gradient(45deg, #700000, #b30000);
   color: white !important;
 }
+.bi-chevron-down {
+  font-size: 12px;
+  color: white;
+}
