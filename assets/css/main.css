@@ -752,7 +752,22 @@ section {
 .card-title {
   text-transform: uppercase;
 }
-
+@media screen and (max-width: 1200px) {
+  .constructions .card-item {
+    height: 300px;
+    text-align: center;
+  }
+  .constructions .card-item .card-bg {
+    margin-top: 30px;
+    background-size: contain;
+    min-height: 200px;
+  }
+  .constructions .card-item .card-body {
+    padding: 10px;
+    min-height: 50px;
+    cursor: pointer;
+  }
+}
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
