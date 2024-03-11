@@ -706,11 +706,12 @@ section {
   border: 1px solid rgba(82, 86, 94, 0.2);
   background: #fff;
   position: relative;
-  border-radius: 0;
+  border-radius: 8px;
 }
 
 .constructions .card-item .card-bg {
-  min-height: 230px;
+  min-height: 100%;
+  height: auto;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
