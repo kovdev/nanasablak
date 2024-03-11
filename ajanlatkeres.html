@@ -64,7 +64,7 @@
               ></a>
               <ul>
                 <li class="dropdown">
-                  <a
+                  <a href="/ablakok/ablakokerkelyajtok.html"
                     ><span class="deepDropDown">Ablakok, Erkély Ajtók</span>
                     <i class="bi bi-chevron-right"></i
                   ></a>
@@ -76,7 +76,7 @@
                   </ul>
                 </li>
                 <li class="dropdown">
-                  <a
+                  <a href="/bejarati-ajtok/bejaratiajtok.html"
                     ><span class="deepDropDown">Bejárati Ajtók</span>
                     <i class="bi bi-chevron-right"></i
                   ></a>
@@ -98,7 +98,7 @@
                 </li>
 
                 <li class="dropdown">
-                  <a
+                  <a href="/tolobukorendszerek/toloajtorendszerek.html"
                     ><span class="deepDropDown">Toló-Ajtó Rendszerek</span>
                     <i class="bi bi-chevron-right"></i
                   ></a>
@@ -125,7 +125,7 @@
               <a href="https://kunlux.hu" target="_blank">Árnyékolástechnika</a>
             </li>
             <li class="dropdown">
-              <a
+              <a href="/parkanyok.html"
                 ><span class="deepDropDown">Párkányok</span>
                 <i class="bi bi-chevron-down"></i
               ></a>
@@ -179,97 +179,55 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-6 form-group mb-2">
-                  <label for="name">Név</label>
+                  <label for="name">Név*</label>
                   <input
                     type="text"
                     name="name"
                     class="form-control"
                     id="name"
-                    placeholder="Név"
                     required
                   />
                 </div>
                 <div class="col-md-6 form-group mb-2">
-                  <label for="email">Email</label>
+                  <label for="email">E-mail cím*</label>
                   <input
                     type="email"
                     class="form-control"
                     name="email"
                     id="email"
-                    placeholder="Email Cím"
                     required
                   />
                 </div>
               </div>
-              <div class="form-group mb-2">
-                <label for="subject">Tárgy</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="subject"
-                  id="subject"
-                  placeholder="Tárgy"
-                  required
-                />
-              </div>
-              <div class="form-group mb-2">
-                <label for="category"
-                  >Melyik termék kategória után érdeklődik</label
-                >
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  required
-                  id="category"
-                >
-                  <option value="1">Műanyag nyílászárók</option>
-                  <option value="2">Beltéri Ajtók</option>
-                  <option value="3">Párkányok</option>
-                </select>
-              </div>
-              <div id="plasticDoors" style="display: none">
-                <div class="form-group mb-2">
-                  <label for="plasticDoorType"
-                    >Ablak vagy Erkély Ajtó típusa</label
-                  >
-                  <select class="form-select" id="plasticDoorType">
-                    <option value="4">Ablakok, Erkély Ajtók</option>
-                    <option value="5">Bejárati Ajtók</option>
-                    <option value="6">Toló-Ajtó Rendszerek</option>
-                  </select>
+              <div class="row">
+                <div class="col-md-6 form-group mb-2">
+                  <label for="name">Telefonszám*</label>
+                  <input
+                    type="text"
+                    name="name"
+                    class="form-control"
+                    id="phone"
+                    required
+                  />
                 </div>
-              </div>
-              <div id="windowsAndDoorsDiv" style="display: none">
-                <div class="form-group mb-2">
-                  <label for="windowsAndDoors">Márka</label>
-                  <select class="form-select" id="windowsAndDoors">
-                    <option value="7">Aluplast</option>
-                    <option value="8">Rehau</option>
-                    <option value="9">Wital</option>
-                    <option value="10">M-Drive</option>
-                  </select>
-                </div>
-              </div>
-              <div id="productsDiv" style="display: none">
-                <div class="form-group mb-2">
-                  <label for="products">Műanyag nyílászáró típusa</label>
-                  <select class="form-select" id="products">
-                    <option value="11">IDEAL 4000</option>
-                    <option value="12">IDEAL 7000</option>
-                    <option value="13">IDEAL 8000</option>
-                    <option value="14">IDEAL NEO MD</option>
-                    <option value="15">IDEAL INTERTEC 85</option>
-                  </select>
+                <div class="col-md-6 form-group mb-2">
+                  <label for="email">Lakóhely*</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="lakohely"
+                    id="lakohely"
+                    required
+                  />
                 </div>
               </div>
 
               <div class="form-group mb-2">
-                <label for="message">Üzenet</label>
+                <label for="message">Üzenet*</label>
                 <textarea
                   class="form-control"
                   name="message"
                   rows="5"
-                  placeholder="Üzenet"
                   required
                 ></textarea>
               </div>
@@ -361,51 +319,5 @@
 
     <!-- Template Main JS File -->
     <script src="/assets/js/main.js"></script>
-    <script>
-      window.onload = function () {
-        // Get all select elements
-        var selectElements = document.getElementsByTagName('select');
-
-        // Iterate through each select element
-        for (var i = 0; i < selectElements.length; i++) {
-          // Set selectedIndex to -1 to unselect all options
-          selectElements[i].selectedIndex = -1;
-        }
-      };
-      // category level
-      document
-        .getElementById('category')
-        .addEventListener('change', function () {
-          var plasticDoorsDiv = document.getElementById('plasticDoors');
-          if (this.value == '1') {
-            plasticDoorsDiv.style.display = 'block';
-          } else {
-            plasticDoorsDiv.style.display = 'none';
-          }
-        });
-      // productCategory level
-      document
-        .getElementById('plasticDoorType')
-        .addEventListener('change', function () {
-          var windowsAndDoors = document.getElementById('windowsAndDoorsDiv');
-          if (this.value == '4') {
-            windowsAndDoors.style.display = 'block';
-          } else {
-            windowsAndDoors.style.display = 'none';
-          }
-        });
-      // brands level
-      document
-        .getElementById('windowsAndDoors')
-        .addEventListener('change', function () {
-          console.log('hehe', document.getElementById('products'));
-          var products = document.getElementById('productsDiv');
-          if (this.value == '7') {
-            products.style.display = 'block';
-          } else {
-            products.style.display = 'none';
-          }
-        });
-    </script>
   </body>
 </html>

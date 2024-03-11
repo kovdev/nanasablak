@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Bejárati Ajtók</title>
+    <title>Párkányok</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
 
@@ -58,7 +58,7 @@
               <img id="logoImg" src="/assets/img/logo.png" alt="logo" />
             </a>
             <li class="dropdown">
-              <a href="#" class=""
+              <a href="/muanyagnyilaszarok.html"
                 ><span>Műanyag Nyílászárók</span>
                 <i class="bi bi-chevron-down dropdown-indicator"></i
               ></a>
@@ -75,7 +75,27 @@
                     <li><a href="/ablakok/deceuninck.html">Deceuninck</a></li>
                   </ul>
                 </li>
-                <li><a href="#" class="active">Bejárati Ajtók</a></li>
+                <li class="dropdown">
+                  <a href="/bejarati-ajtok/bejaratiajtok.html"
+                    ><span class="deepDropDown">Bejárati Ajtók</span>
+                    <i class="bi bi-chevron-right"></i
+                  ></a>
+                  <ul>
+                    <li>
+                      <a href="/bejarati-ajtok/aluplast.html">Aluplast</a>
+                    </li>
+                    <li><a href="/bejarati-ajtok/rehau.html">Rehau</a></li>
+                    <li><a href="/bejarati-ajtok/wital.html">Wital</a></li>
+                    <li>
+                      <a href="/bejarati-ajtok/deceuninck.html">Deceuninck</a>
+                    </li>
+                    <li>
+                      <a href="/bejaratiajtokkatalogusok.html" class="bordo"
+                        >Katalógusok</a
+                      >
+                    </li>
+                  </ul>
+                </li>
 
                 <li class="dropdown">
                   <a href="/tolobukorendszerek/toloajtorendszerek.html"
@@ -105,7 +125,7 @@
               <a href="https://kunlux.hu" target="_blank">Árnyékolástechnika</a>
             </li>
             <li class="dropdown">
-              <a href="/parkanyok.html"
+              <a class="active"
                 ><span class="deepDropDown">Párkányok</span>
                 <i class="bi bi-chevron-down"></i
               ></a>
@@ -142,44 +162,44 @@
           class="container position-relative d-flex flex-column align-items-center"
           data-aos="fade"
         >
-          <h2 class="shadowHeader">BEJÁRATI AJTÓK</h2>
+          <h2 class="shadowHeader">PÁRKÁNYOK</h2>
+          <ol>
+            <li><a href="/parkanyok/pvc.html">PVC</a></li>
+            <li><a href="/parkanyok/aluminium.html">ALUMÍNIUM</a></li>
+            <li><a href="/parkanyok/koparkany.html">KŐ</a></li>
+          </ol>
         </div>
       </div>
 
       <section>
         <div class="container">
-          <h2 class="text-center text-primary fw-normal shadowHeader">
-            PVC ABLAKOK
-          </h2>
           <div class="productListRow">
-            <a href="/ablakok/rehausynegomd.html" class="noChange"
-              ><div class="productListCard">
+            <div class="productListCard image-container">
+              <a href="/parkanyok/pvc.html" class="noChange">
+                <img src="/assets/img/pvc1.jpg" class="img-fluid" alt="PVC" />
+                <h3 class="py-3">PVC PÁRKÁNYOK</h3>
+              </a>
+            </div>
+            <div class="productListCard image-container text-center">
+              <a href="/parkanyok/aluminium.html" class="noChange">
                 <img
-                  src="/assets/img/rehausynegomd.jpg"
+                  src="/assets/img/hajlitott6003.jpg"
                   class="img-fluid"
-                  alt="ideal4000ablak"
+                  alt="PVC"
                 />
-                <h3>SYNEGO MD</h3>
-              </div></a
-            >
-          </div>
-        </div>
-
-        <div class="container">
-          <h2 class="text-center text-primary fw-normal mt-5 shadowHeader">
-            AJTÓ RENDSZEREK
-          </h2>
-          <div class="productListRow">
-            <a href="/bejarati-ajtok/synegoentrance.html" class="noChange">
-              <div class="productListCard">
+                <h3 class="py-3">ALUMÍNIUM PÁRKÁNYOK</h3>
+              </a>
+            </div>
+            <div class="productListCard image-container">
+              <a href="/parkanyok/koparkany.html" class="noChange">
                 <img
-                  src="/assets/img/synegoentrance.webp"
+                  src="/assets/img/koparkany.webp"
                   class="img-fluid"
-                  alt="synegoentranceajto"
+                  alt="PVC"
                 />
-                <h3>SYNEGO BEJÁRATI AJTÓ</h3>
-              </div></a
-            >
+                <h3 class="py-3">KŐ PÁRKÁNYOK</h3>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -239,7 +259,17 @@
     ></a>
 
     <div id="preloader"></div>
-
+    <div id="fullscreenBackdrop"></div>
+    <button id="prevButton"><i class="bi bi-chevron-left"></i></button>
+    <button id="nextButton"><i class="bi bi-chevron-right"></i></button>
+    <img
+      id="fullscreenImage"
+      class="fullscreen-image"
+      src=""
+      alt="Fullscreen Image"
+      style="display: none"
+    />
+    <div id="overlayText"></div>
     <!-- Vendor JS Files -->
     <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/vendor/aos/aos.js"></script>
