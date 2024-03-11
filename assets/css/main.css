@@ -759,22 +759,14 @@ section {
   padding: 40px;
   background: #fff;
   height: 100%;
+  pointer-events: none;
+  border-radius: 8px;
 }
-
-.services .service-item .icon {
-  width: 48px;
-  height: 48px;
-  position: relative;
-  margin-bottom: 50px;
-}
-
-.services .service-item .icon i {
-  color: var(--color-secondary);
-  font-size: 40px;
-  transition: ease-in-out 0.3s;
-  z-index: 2;
-  position: relative;
-  line-height: 1.8;
+.services .service-item img {
+  border-radius: 8px;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 1rem;
 }
 
 .services .service-item .icon:before {
