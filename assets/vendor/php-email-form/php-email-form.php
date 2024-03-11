@@ -32,10 +32,10 @@ class PHP_Email_Form {
 
   public $error_msg = array(
     'invalid_to_email' => 'Email to (receiving email address) is empty or invalid!',
-    'invalid_from_name' => 'From Name is empty!',
-    'invalid_from_email' => 'Email from: is empty or invalid!',
+    'invalid_from_name' => 'A Név mező üres!',
+    'invalid_from_email' => 'Email mező helytelen vagy üres!',
     'invalid_subject' => 'Subject is too short or empty!',
-    'short' => 'is too short or empty!',
+    'short' => 'túl rövid vagy üres!',
     'ajax_error' => 'Sorry, the request should be an Ajax POST',
     'invalid_attachment_extension' => 'File extension not allowed, please choose:',
     'invalid_attachment_size' => 'Max allowed attachment size is:'
@@ -134,8 +134,8 @@ class PHP_Email_Form {
     if( ! $from_email ) 
       $this->error .= $this->error_msg['invalid_from_email'] . '<br>';
 
-    if( ! $subject ) 
-      $this->error .= $this->error_msg['invalid_subject'] . '<br>';
+    // if( ! $subject ) 
+    //   $this->error .= $this->error_msg['invalid_subject'] . '<br>';
 
     if( is_array( $this->smtp) ) {
       if( !isset( $this->smtp['host'] ) )

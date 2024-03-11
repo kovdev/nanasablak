@@ -168,7 +168,7 @@
         </div>
       </div>
 
-      <section>
+      <section class="contact">
         <div class="container d-flex gap-1 justify-content-center">
           <form
             action="forms/contact.php"
@@ -204,7 +204,7 @@
                   <label for="name">Telefonszám*</label>
                   <input
                     type="text"
-                    name="name"
+                    name="phone"
                     class="form-control"
                     id="phone"
                     required
@@ -231,9 +231,17 @@
                   required
                 ></textarea>
               </div>
+              <div class="my-3">
+                <div class="loading">Töltés</div>
+                <div class="error-message"></div>
+                <div class="sent-message">
+                  Ajánlatkérését elküldtük, hamarosan felvesszük Önnel a
+                  kapcsolatot!
+                </div>
+              </div>
               <div class="text-center">
-                <button type="submit" class="btn btn-primary m-3">
-                  Üzenet Küldése
+                <button type="submit" class="btn ajanlatkeresBtn m-3">
+                  Ajánlatkérés küldése
                 </button>
               </div>
             </div>
