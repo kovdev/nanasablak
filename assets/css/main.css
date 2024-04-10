@@ -724,7 +724,7 @@ section {
 }
 
 .constructions .card-item .card-body:hover {
-  background: #c58918;
+  background: #3678b8;
 }
 
 .constructions .card-item .card-body:hover p,
@@ -3404,4 +3404,14 @@ section {
 }
 .colorCubeContainer .ajto {
   height: 200px !important;
+}
+.col-xl-5 {
+  padding-right: 0;
+}
+.col-xl-7 {
+  padding-left: 0;
+}
+.col-xl-5 .card-bg {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
